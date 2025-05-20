@@ -59,3 +59,120 @@
   </footer>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BqtMarket - Онлайн-магазин техники</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="bg-white shadow p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-blue-600">BqtMarket</h1>
+    <nav class="space-x-4">
+      <a href="#" class="hover:text-blue-600">Главная</a>
+      <a href="#catalog" class="hover:text-blue-600">Каталог</a>
+      <a href="#cart" class="hover:text-blue-600">Корзина</a>
+      <a href="#contacts" class="hover:text-blue-600">Контакты</a>
+      <a href="#login" class="hover:text-blue-600">Войти</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-blue-100 text-center py-16">
+    <h2 class="text-4xl font-bold mb-4">Добро пожаловать в BqtMarket</h2>
+    <p class="text-lg mb-6">Лучшие предложения на смартфоны, ноутбуки и аксессуары</p>
+    <a href="#catalog" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700">Перейти в каталог</a>
+  </section>
+
+  <!-- Search and Filters -->
+  <section class="max-w-6xl mx-auto py-6">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <input type="text" placeholder="Поиск товаров..." class="w-full sm:w-1/2 border rounded px-4 py-2" />
+      <select class="border rounded px-4 py-2">
+        <option>Все категории</option>
+        <option>Смартфоны</option>
+        <option>Ноутбуки</option>
+        <option>Аксессуары</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- Catalog Section -->
+  <section id="catalog" class="py-12 max-w-6xl mx-auto">
+    <h3 class="text-3xl font-semibold text-center mb-8">Каталог товаров</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="bg-white p-4 shadow rounded-lg">
+        <img src="https://via.placeholder.com/300x200" alt="Смартфон" class="mb-4 w-full h-40 object-cover rounded" />
+        <h4 class="text-xl font-medium">Смартфон Samsung A54</h4>
+        <p class="text-sm text-gray-600 mb-2">Отличный выбор по доступной цене</p>
+        <p class="font-bold mb-2">25 990 ₽</p>
+        <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" onclick="addToCart('Смартфон Samsung A54', 25990)">В корзину</button>
+      </div>
+      <div class="bg-white p-4 shadow rounded-lg">
+        <img src="https://via.placeholder.com/300x200" alt="Ноутбук" class="mb-4 w-full h-40 object-cover rounded" />
+        <h4 class="text-xl font-medium">Ноутбук Lenovo IdeaPad</h4>
+        <p class="text-sm text-gray-600 mb-2">Для работы и учебы</p>
+        <p class="font-bold mb-2">45 990 ₽</p>
+        <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" onclick="addToCart('Ноутбук Lenovo IdeaPad', 45990)">В корзину</button>
+      </div>
+      <div class="bg-white p-4 shadow rounded-lg">
+        <img src="https://via.placeholder.com/300x200" alt="Наушники" class="mb-4 w-full h-40 object-cover rounded" />
+        <h4 class="text-xl font-medium">Наушники Xiaomi</h4>
+        <p class="text-sm text-gray-600 mb-2">Беспроводные, с шумоподавлением</p>
+        <p class="font-bold mb-2">3 990 ₽</p>
+        <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" onclick="addToCart('Наушники Xiaomi', 3990)">В корзину</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Section -->
+  <section id="cart" class="bg-gray-100 py-12">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-2xl font-semibold mb-4">Корзина</h3>
+      <ul id="cart-items" class="mb-4"></ul>
+      <p class="text-lg font-bold">Итого: <span id="cart-total">0</span> ₽</p>
+      <button class="mt-4 bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">Оформить заказ</button>
+    </div>
+  </section>
+
+  <!-- Login/Register Section -->
+  <section id="login" class="py-12 bg-white">
+    <div class="max-w-md mx-auto text-center">
+      <h3 class="text-xl font-semibold mb-4">Вход в личный кабинет</h3>
+      <input type="email" placeholder="Email" class="w-full mb-2 border rounded px-4 py-2" />
+      <input type="password" placeholder="Пароль" class="w-full mb-4 border rounded px-4 py-2" />
+      <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Войти</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contacts" class="bg-white py-6 border-t text-center text-sm">
+    <p>BqtMarket © 2025 | Тел: +7 (999) 123-45-67 | Email: info@bqtmarket.ru</p>
+  </footer>
+
+  <script>
+    let cart = [];
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById('cart-items');
+      const total = document.getElementById('cart-total');
+      cartList.innerHTML = '';
+      let sum = 0;
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} — ${item.price} ₽`;
+        cartList.appendChild(li);
+        sum += item.price;
+      });
+      total.textContent = sum;
+    }
+  </script>
+</body>
+</html>
