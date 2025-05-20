@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BqtMarket - Онлайн-магазин техники</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="bg-white shadow p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-blue-600">BqtMarket</h1>
+    <nav class="space-x-4">
+      <a href="#" class="hover:text-blue-600">Главная</a>
+      <a href="#catalog" class="hover:text-blue-600">Каталог</a>
+      <a href="#contacts" class="hover:text-blue-600">Контакты</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-blue-100 text-center py-16">
+    <h2 class="text-4xl font-bold mb-4">Добро пожаловать в BqtMarket</h2>
+    <p class="text-lg mb-6">Лучшие предложения на смартфоны, ноутбуки и аксессуары</p>
+    <a href="#catalog" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700">Перейти в каталог</a>
+  </section>
+
+  <!-- Catalog Section -->
+  <section id="catalog" class="py-12 max-w-6xl mx-auto">
+    <h3 class="text-3xl font-semibold text-center mb-8">Популярные категории</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="bg-white p-4 shadow rounded-lg">
+        <img src="https://via.placeholder.com/300x200" alt="Смартфоны" class="mb-4 w-full h-40 object-cover rounded" />
+        <h4 class="text-xl font-medium">Смартфоны</h4>
+        <p class="text-sm text-gray-600">Новинки и бестселлеры по отличным ценам</p>
+      </div>
+      <div class="bg-white p-4 shadow rounded-lg">
+        <img src="https://via.placeholder.com/300x200" alt="Ноутбуки" class="mb-4 w-full h-40 object-cover rounded" />
+        <h4 class="text-xl font-medium">Ноутбуки</h4>
+        <p class="text-sm text-gray-600">Для работы, учёбы и игр</p>
+      </div>
+      <div class="bg-white p-4 shadow rounded-lg">
+        <img src="https://via.placeholder.com/300x200" alt="Аксессуары" class="mb-4 w-full h-40 object-cover rounded" />
+        <h4 class="text-xl font-medium">Аксессуары</h4>
+        <p class="text-sm text-gray-600">Зарядки, чехлы, наушники и многое другое</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo -->
+  <section class="bg-blue-50 py-12 text-center">
+    <h3 class="text-2xl font-semibold mb-4">Скидки до 30% на технику недели!</h3>
+    <p class="mb-6">Успейте заказать до конца акции</p>
+    <a href="#" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700">Узнать подробнее</a>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contacts" class="bg-white py-6 border-t text-center text-sm">
+    <p>BqtMarket © 2025 | Тел: +7 (999) 123-45-67 | Email: info@bqtmarket.ru</p>
+  </footer>
+</body>
+</html>
